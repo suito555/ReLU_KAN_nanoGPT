@@ -13,7 +13,7 @@ train_shakespeare_char_kan.pyのkanの部分を変更することでefficient_KA
 #torch.save(checkpoint, os.path.join(out_dir, 'ckpt.pt'))
 ```
 ### Result
-KANのパラメーターの感覚がつかめていないため、mlpの設定を固定にして、そのままKANのgrid=5,k=3での結果を表にしておきます。(効果的な設定を知っている方は教えていただけると嬉しいです。)
+KANのパラメーターの感覚がつかめていないため、mlpの設定を固定にして、そのままの値でKANのgrid=5,k=3での結果を表にしておきます。(効果的な設定を知っている方は教えていただけると嬉しいです。)
 
 | モデル名 | パラメータ数 (M) | 処理時間 (ms/step) | train loss | eval loss |
 |---|---|---|---|---|

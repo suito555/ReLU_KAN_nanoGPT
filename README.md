@@ -27,7 +27,10 @@ KANのパラメーターの感覚がつかめていないため、mlpの設定�
 ![](https://github.com/suito555/ReLU_KAN_nanoGPT/blob/main/assets/nanoGPT_KAN_result.png)
 ![](https://github.com/suito555/ReLU_KAN_nanoGPT/blob/main/assets/MLP_and_cheby_KAN.png)
 ### references
+[Efficient_KAN](https://github.com/Blealtan/efficient-kan)<br>
 [ReLU KAN](https://github.com/quiqi/relu_kan)<br>
+[ChebyKAN](https://github.com/SynodicMonth/ChebyKAN)<br>
 [nanoGPT](https://github.com/karpathy/nanoGPT)<br>
 [kan-gpt](https://github.com/AdityaNG/kan-gpt)<br>
-[nanoKAN](https://github.com/AutomaticHourglass/nanoKAN)
+[nanoKAN](https://github.com/AutomaticHourglass/nanoKAN)<br>
+

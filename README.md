@@ -20,8 +20,12 @@ KANのパラメーターの感覚がつかめていないため、mlpの設定�
 | MLP | 0.80 | 44.43 | 1.7095 | 1.8244 |
 | efficient_KAN | 7.87 | 179.77 | 1.5818 | 1.7998 |
 | ReLU_KAN | 6.36 | 209.77 | 1.7818 | 1.9501 |
+| cheby_KAN | 7.09 | 77.72 | 1.5920 | 1.8554 |
+
+(cheby_KANはdegree=4でstep6000程でnan、degree=8では問題なし)
 
 ![](https://github.com/suito555/ReLU_KAN_nanoGPT/blob/main/assets/nanoGPT_KAN_result.png)
+![](https://github.com/suito555/ReLU_KAN_nanoGPT/blob/main/assets/MLP_and_cheby_KAN.png)
 ### references
 [ReLU KAN](https://github.com/quiqi/relu_kan)<br>
 [nanoGPT](https://github.com/karpathy/nanoGPT)<br>

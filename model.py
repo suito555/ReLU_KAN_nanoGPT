@@ -8,6 +8,7 @@ from torch.nn import functional as F
 
 from KAN.efficient_kan import KANLinear as EfficientKANLinear
 from KAN.relu_kan import ReLUKANLinear
+from KAN.cheby_kan import ChebyKANLayer as ChebyKANLinear
 
 class LayerNorm(nn.Module):
     """ LayerNorm but with an optional bias. PyTorch doesn't support simply bias=False """
@@ -32,6 +33,9 @@ class CausalSelfAttention(nn.Module):
         elif config.kan=="ReLU_KAN":
             print("using ReLU_KAN for attention projection")
             self.c_attn = ReLUKANLinear(config.n_embd, 3 * config.n_embd)
+        elif config.kan=="cheby_KAN":
+            print("using cheby_KAN for attention projection")
+            self.c_attn = ChebyKANLinear(config.n_embd, 3 * config.n_embd)
         elif config.kan=="MLP":
             print("using nn.Linear for attention projection")
             self.c_attn = nn.Linear(config.n_embd, 3 * config.n_embd,bias=config.bias)
@@ -46,6 +50,9 @@ class CausalSelfAttention(nn.Module):
         elif config.kan=="ReLU_KAN":
             print("using ReLU_KAN for output projection")
             self.c_proj = ReLUKANLinear(config.n_embd, config.n_embd)
+        elif config.kan=="cheby_KAN":
+            print("using cheby_KAN for output projection")
+            self.c_proj = ChebyKANLinear(config.n_embd, config.n_embd)
         elif config.kan=="MLP":
             print("using nn.Linear for output projection")
             self.c_proj = nn.Linear(config.n_embd, config.n_embd, bias=config.bias)
@@ -109,6 +116,10 @@ class MLP(nn.Module):
             print("using ReLU_KAN for MLP")
             self.c_fc    = ReLUKANLinear(config.n_embd, 4 * config.n_embd)
             self.c_proj  = ReLUKANLinear(4 * config.n_embd, config.n_embd)
+        elif config.kan=="cheby_KAN":
+            print("using cheby_KAN for MLP")
+            self.c_fc    = ChebyKANLinear(config.n_embd, 4 * config.n_embd)
+            self.c_proj  = ChebyKANLinear(4 * config.n_embd, config.n_embd)
         elif config.kan=="MLP":
             print("using nn.Linear for MLP")
             self.c_fc    = nn.Linear(config.n_embd, 4 * config.n_embd, bias=config.bias)

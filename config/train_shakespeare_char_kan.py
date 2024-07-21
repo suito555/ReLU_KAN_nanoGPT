@@ -14,7 +14,7 @@ wandb_project = 'shakespeare-char-kan'
 wandb_run_name = 'nanogpt-ReLU_KAN'
 
 dataset = 'shakespeare_char'
-kan = "ReLU_KAN" #"efficient_KAN" or "ReLU_KAN" or  "MLP"
+kan = "ReLU_KAN" #"efficient_KAN" or "ReLU_KAN" or "cheby_KAN" or "MLP"
 
 gradient_accumulation_steps = 8
 batch_size = 2
